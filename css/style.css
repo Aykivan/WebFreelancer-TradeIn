@@ -134,15 +134,54 @@ body {
           align-items: center;
   height: 75px;
 }
+.header__logo {
+  position: relative;
+  z-index: 2;
+  width: 144px;
+}
+@media (max-width: 767px) {
+  .header__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
 .menu {
   padding: 0px 0px 0px 3.1578947368%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
-.menu__body {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+@media (max-width: 767px) {
+  .menu__body {
+    background-color: rgba(29, 37, 43, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    padding: 80px 0px 20px 0px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .menu__body:after {
+    content: "";
+    background-color: #1c242a;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    left: 0;
+    top: 0;
+  }
+  .menu__body.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .menu__list {
   display: -webkit-box;
@@ -155,6 +194,18 @@ body {
 .menu__list li {
   margin: 0 15px;
 }
+@media (max-width: 767px) {
+  .menu__list {
+    display: block;
+    text-align: center;
+  }
+  .menu__list li {
+    margin: 0px 0px 30px 0px;
+  }
+  .menu__list li:last-child {
+    margin: 0px 0px 0px 0px;
+  }
+}
 .menu__link, .actions-header__region {
   font-family: "PFDin-reg";
   letter-spacing: 1.4;
@@ -166,6 +217,11 @@ body {
     text-decoration: underline;
   }
 }
+@media (max-width: 767px) {
+  .menu__link, .actions-header__region {
+    font-size: 24px;
+  }
+}
 
 .actions-header {
   display: -webkit-box;
@@ -174,6 +230,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  z-index: 2;
 }
 .actions-header__region {
   line-height: 18px;
@@ -212,6 +270,7 @@ body {
   right: 0;
   position: absolute;
   background-color: #1c242a;
+  min-width: 185px;
 }
 .user-header__menu li {
   margin: 0px 0px 8px 0px;
@@ -220,7 +279,7 @@ body {
   margin: 0px 0px 0px 0px;
 }
 .user-header__menu._active {
-  top: 78px;
+  top: 50px;
   opacity: 1;
   visibility: visible;
 }
@@ -272,13 +331,14 @@ body {
 
 @media (max-width: 767px) {
   .icon-menu {
+    z-index: 99;
     display: block;
     position: relative;
     width: 30px;
     height: 20px;
   }
   .icon-menu span {
-    background-color: #fff;
+    background-color: #bb9e6b;
     position: absolute;
     width: 100%;
     height: 2px;

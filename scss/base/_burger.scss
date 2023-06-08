@@ -1,7 +1,6 @@
-.menu__icon {}
-
 .icon-menu {
 	display: none;
+
 	span {
 		transition: all 0.3s ease;
 	}
@@ -11,9 +10,11 @@
 			transform: rotate(45deg);
 			top: 9px;
 		}
+
 		span:nth-child(2) {
 			transform: scale(0);
 		}
+
 		span:nth-child(3) {
 			transform: rotate(-45deg);
 			bottom: 9px;
@@ -23,24 +24,30 @@
 
 @media (max-width: 767px) {
 	.icon-menu {
+		z-index: 99;
 		display: block;
 		position: relative;
+		// top: 18px;
+		// right: 10px;
 		width: 30px;
 		height: 20px;
 
 		span {
-			background-color: #fff;
+			background-color: #bb9e6b;
 			position: absolute;
 			width: 100%;
 			height: 2px;
 			left: 0;
 		}
+
 		span:nth-of-type(1) {
 			top: 0;
 		}
+
 		span:nth-of-type(2) {
 			top: 9px;
 		}
+
 		span:nth-of-type(3) {
 			bottom: 0;
 		}
